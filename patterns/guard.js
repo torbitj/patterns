@@ -36,5 +36,7 @@ export function vote(age) {
  * @returns `undefined` if either argument is not a string
  */
 export function concatenateStrings(str1, str2) {
-  // TODO
+  if (typeof (str1) !== "string" || typeof (str2) !== "string") {
+    return undefined;
+  }
 }
