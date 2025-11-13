@@ -64,12 +64,12 @@ export function makeTriangle(size) {
  */
 export function countLetter(words, letter) {
   const letterTotal = words.reduce((letterCount, currentWord) => {
-    currentWord.foreach((character) => {
-      if (character === letter) {
-        letterCount++
+    for (let i = 0; i < currentWord.length; i++) {
+      if (currentWord[i] === letter) {
+        letterCount++;
       }
-      return letterCount;
-    })
+    }
+    return letterCount;
   }, 0);
   return letterTotal;
 }
