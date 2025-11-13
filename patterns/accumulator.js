@@ -25,6 +25,17 @@ export function factorial(n) {
   if (typeof (n) !== "number") {
     return NaN;
   }
+  if (n < 0) {
+    return undefined;
+  } else if (n === 0) {
+    return 1;
+  } else {
+    let totalProduct = 1;
+    for (let i = 1; i <= n; i++) {
+      totalProduct *= i;
+    }
+    return totalProduct;
+  }
 }
 
 /**
