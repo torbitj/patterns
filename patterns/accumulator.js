@@ -123,4 +123,6 @@ export function complementDNA(dna) {
         break;
     }
   }
+  
+  return complement;
 }
