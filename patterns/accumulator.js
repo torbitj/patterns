@@ -105,5 +105,22 @@ export function complementDNA(dna) {
   if (typeof (dna) !== "string") {
     return null;
   }
-  const
+  let complement = "";
+  for (let i = 0; i < dna.length; i++) {
+    switch (dna[i]) {
+      case 'A':
+        complement += 'T';
+        break;
+      case 'T':
+        complement += 'A';
+        break;
+      case 'G':
+        complement += 'C'
+        break;
+    
+      default:
+        complement += 'G'
+        break;
+    }
+  }
 }
