@@ -46,7 +46,10 @@ export function factorial(n) {
  */
 export function buildNArray(n) {
   if (typeof (n) !== "number") {
-    return NaN;
+    return null;
+  }
+  if (n <= 0) {
+    return [];
   }
 }
 
