@@ -22,6 +22,12 @@ export function isAllEven(numbers) {
   if (numbers.length === 0) {
     return undefined;
   }
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 1) {
+      return false
+    }
+  }
+  return true;
 }
 
 /**
