@@ -22,7 +22,20 @@ export function sumToN(n) {
  * @returns `1` if n is 0
  */
 export function factorial(n) {
-  // TODO
+  if (typeof (n) !== "number") {
+    return NaN;
+  }
+  if (n < 0) {
+    return undefined;
+  } else if (n === 0) {
+    return 1;
+  } else {
+    let totalProduct = 1;
+    for (let i = 1; i <= n; i++) {
+      totalProduct *= i;
+    }
+    return totalProduct;
+  }
 }
 
 /**
@@ -32,7 +45,18 @@ export function factorial(n) {
  * @returns `[]` if n is 0 or negative
  */
 export function buildNArray(n) {
-  // TODO
+  if (typeof (n) !== "number") {
+    return null;
+  }
+  if (n <= 0) {
+    return [];
+  } else {
+    const builtArray = [];
+    for (let i = 1; i <= n; i++) {
+      builtArray.push(i);
+    }
+    return builtArray;
+  }
 }
 
 /**
@@ -40,7 +64,14 @@ export function buildNArray(n) {
  * @returns {string} the longest string in `strings`
  */
 export function getLongestString(strings) {
-  // TODO
+  const longestString = strings.reduce((currentLong, currentStr) => {
+    if (currentStr.length > currentLong.length) {
+      currentLong = currentStr;
+    }
+    return currentLong;
+  }, "");
+
+  return longestString;
 }
 
 /**
@@ -48,7 +79,16 @@ export function getLongestString(strings) {
  * @returns {number} the number of students present
  */
 export function countPresent(attendance) {
-  // TODO
+  if (attendance.length === 0) {
+    return 0;
+  }
+  const numPresent = attendance.reduce((currentPresent, currentStu) => {
+    if (currentStu) {
+      currentPresent++;
+    }
+    return currentPresent;
+  }, 0);
+  return numPresent;
 }
 
 /**
@@ -62,5 +102,27 @@ export function countPresent(attendance) {
  * @returns `null` if `dna` is not a string
  */
 export function complementDNA(dna) {
-  // TODO
+  if (typeof (dna) !== "string") {
+    return null;
+  }
+  let complement = "";
+  for (let i = 0; i < dna.length; i++) {
+    switch (dna[i]) {
+      case 'A':
+        complement += 'T';
+        break;
+      case 'T':
+        complement += 'A';
+        break;
+      case 'G':
+        complement += 'C'
+        break;
+    
+      default:
+        complement += 'G'
+        break;
+    }
+  }
+  
+  return complement;
 }
