@@ -64,7 +64,13 @@ export function buildNArray(n) {
  * @returns {string} the longest string in `strings`
  */
 export function getLongestString(strings) {
-  // TODO
+  const longestString = strings.reduce((currentLong, currentStr) => {
+    if (currentStr.length > currentLong.length) {
+      currentLong = currentStr;
+    }
+    return currentLong;
+  }, "");
+  return longestString;
 }
 
 /**
