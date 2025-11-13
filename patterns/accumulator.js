@@ -45,7 +45,9 @@ export function factorial(n) {
  * @returns `[]` if n is 0 or negative
  */
 export function buildNArray(n) {
-  // TODO
+  if (typeof (n) !== "number") {
+    return NaN;
+  }
 }
 
 /**
