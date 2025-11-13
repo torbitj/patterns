@@ -63,5 +63,13 @@ export function makeTriangle(size) {
  * @returns `0` if `letter is not a string
  */
 export function countLetter(words, letter) {
-  // TODO
+  const letterTotal = words.reduce((letterCount, currentWord) => {
+    currentWord.foreach((character) => {
+      if (character === letter) {
+        letterCount++
+      }
+      return letterCount;
+    })
+  }, 0);
+  return letterTotal;
 }
