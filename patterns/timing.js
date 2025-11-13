@@ -40,12 +40,12 @@ export function isAllEven(numbers) {
  * @returns {boolean} whether there is enough food in the backpack to feed everyone
  */
 export function haveEnoughFood(backpack, people) {
-  const foodInBackpack = backpack.food;
+  const foodInBackpack = backpack.filter((item) => item.category === `food`);
   if (people === 0) {
     return true;
   }
-  else if (Object.keys(backpack).length === 0) {
-    return false;
+  if (foodInBackpack.length >= people) {
+    return true;
   }
-  
+  return false;
 }
