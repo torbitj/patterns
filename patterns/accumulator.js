@@ -70,6 +70,7 @@ export function getLongestString(strings) {
     }
     return currentLong;
   }, "");
+
   return longestString;
 }
 
@@ -78,7 +79,16 @@ export function getLongestString(strings) {
  * @returns {number} the number of students present
  */
 export function countPresent(attendance) {
-  // TODO
+  if (attendance.length === 0) {
+    return 0;
+  }
+  const numPresent = attendance.reduce((currentPresent, currentStu) => {
+    if (currentStu) {
+      currentPresent++;
+    }
+    return currentPresent;
+  }, 0);
+  return numPresent;
 }
 
 /**
