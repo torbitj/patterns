@@ -19,7 +19,9 @@ export function isSongInPlaylist(playlist, song) {
  * @returns `undefined` if `numbers` is empty
  */
 export function isAllEven(numbers) {
-  // TODO
+  if (numbers.length === 0) {
+    return undefined;
+  }
 }
 
 /**
